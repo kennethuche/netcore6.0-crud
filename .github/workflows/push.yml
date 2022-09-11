@@ -22,5 +22,5 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      working-directory: /Toyin-group-test 
+      working-directory: Toyin-group-test 
       run: dotnet test
