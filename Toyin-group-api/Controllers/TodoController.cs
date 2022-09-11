@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Toyin_group_api.Core.Models.Payload;
 using Toyin_group_api.Core.Models.Resources;
 using Toyin_group_api.Core.Services;
@@ -7,7 +8,8 @@ namespace Toyin_group_api.Controllers
 {
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
+    [Authorize]
     public class TodoController  : BaseController
     {
         private readonly ITodoService todoService;

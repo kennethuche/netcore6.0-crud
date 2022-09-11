@@ -25,6 +25,7 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<Todo> Todos { get; set; }
+  
 
     public async Task<int> TrySaveChangesAsync(ILogger logger, CancellationToken ct = default)
     {
