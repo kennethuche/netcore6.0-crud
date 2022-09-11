@@ -31,7 +31,7 @@ namespace Toyin_group_api.Core.Services
                 Code = ResourceCodes.Success,
                 Data = new TodoResource(todo.Id, todo.TodoName, todo.IsCompleted, todo.CreatedAt, todo.UpdatedAt),
 
-            }) : (new ObjectResource<TodoResource>(message: "Unable To Create Todo"));
+            }) : (new ObjectResource<TodoResource>(code : ResourceCodes.NoData ,message: "Unable To Create Todo"));
            
 
         }
@@ -49,7 +49,7 @@ namespace Toyin_group_api.Core.Services
                 Code = ResourceCodes.Success,
                 
 
-            }) : (new ObjectResource<string>(message: "Unable To Delete Todo"));
+            }) : (new ObjectResource<string>(code: ResourceCodes.ServiceError,message: "Unable To Delete Todo"));
 
         }
 
@@ -87,7 +87,7 @@ namespace Toyin_group_api.Core.Services
                 Code = ResourceCodes.Success,
                 Data = new TodoResource(todo.Id, todo.TodoName, todo.IsCompleted, todo.CreatedAt, todo.UpdatedAt),
 
-            }) : (new ObjectResource<TodoResource>(message: "Todo not Found"));
+            }) : (new ObjectResource<TodoResource>(code : ResourceCodes.ServiceError,message: "Todo not Found"));
         }
 
         public async Task<StatusResource> UpdateTodoAsync(Guid id, UpdateTodoPayload payload)
