@@ -22,4 +22,5 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
+      working-directory: Toyin_group_test
       run: dotnet test --no-build --verbosity normal
