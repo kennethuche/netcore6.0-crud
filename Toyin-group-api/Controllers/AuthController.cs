@@ -38,7 +38,7 @@ namespace Toyin_group_api.Controllers
           
             if (payload is not null)
             {
-              
+                
                 var jwt =  configuration.GetSection("Jwt").Get<Jwt>();
 
               var claims = new[] {
